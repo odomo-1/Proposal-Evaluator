@@ -74,7 +74,7 @@ def evaluate_proposal(text, required_sections, doc):
     missing_sections = [sec for sec, present in section_results.items() if not present]
     recommendations = []
     if missing_sections:
-        recommendations.append(f"Missing sections: {', '.join(missing_sections)}")
+        recommendations.append(f"Kindly include the following missing sections: {', '.join(missing_sections)}")
 
     if formatting_results['spelling_issues']:
         recommendations.append("Spelling issues found in the document.")
@@ -158,7 +158,7 @@ def create_word_report(evaluation):
     return buffer
 
 # --- Streamlit UI ---
-st.title("Proposal Evaluator (DOCX Only)")
+st.title("Strategy Unit Proposal Evaluator")
 
 uploaded_proposal = st.file_uploader("Upload Proposal (.docx only)", type=["docx"])
 
